@@ -5,15 +5,15 @@ def readme():
         return f.read()
 
 setup(
-    name='wishful_wireless_stats',
+    name='wishful_wifi_stats',
     version='0.1.0',
     packages=find_packages(),
     url='http://www.wishful-project.eu/software',
     license='',
-    author='Piotr Gawlowicz',
-    author_email='gawlowicz@tu-berlin.de',
-    description='WiSHFUL Simple Module',
-    long_description='Implementation of a wireless agent using the unified programming interfaces (UPIs) of the Wishful project.',
+    author='Anatolij Zubow',
+    author_email='zubow@tu-berlin.de',
+    description='WiSHFUL WiFi stats module',
+    long_description='Implementation of Wifi stats',
     keywords='wireless control',
     install_requires=[]
 )
