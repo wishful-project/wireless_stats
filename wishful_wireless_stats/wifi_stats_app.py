@@ -5,14 +5,16 @@ from wishful_agent.core import wishful_module
 __author__ = "Anatolij Zubow"
 __copyright__ = "Copyright (c) 2015, Technische Universitat Berlin"
 __version__ = "0.1.0"
-__email__ = "{zubow}@tkn.tu-berlin.de"
+__email__ = "zubow@tkn.tu-berlin.de"
 
 
 '''
-    WiFi stats module for IEEE 802.11
+    Wireless stats app for IEEE 802.11:
+    - estimates the AP which serves the given STA
+    - ...
 '''
 @wishful_module.build_module
-class WirelessStatsApp(wishful_module.AgentModule):
+class WifiStatsApp(wishful_module.ControllerModule):
     def __init__(self):
         super().__init__()
         self.log = logging.getLogger('WirelessStatsApp')
@@ -54,7 +56,7 @@ class WirelessStatsApp(wishful_module.AgentModule):
 
 
     @wishful_module.on_event(upis.wifi.WiFiGetServingAPRequestEvent)
-    def is_associated_with(self, event):
+    def get_AP_the_client_is_associated_with(self, event):
         """
         Estimates the AP which serves the given STA. Note: if an STA is associated with multiple APs the one with the
         smallest inactivity time is returned.

@@ -1,1 +1,1 @@
-from .app import *
+from .wifi_stats_app import *
